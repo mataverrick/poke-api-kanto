@@ -1,31 +1,58 @@
-*{
+* {
     box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat';
     background-color: #F2E8CF;
 }
 
-body{margin: 0;}
-
-#root{
+#root {
     display: grid;
-    grid-template-areas: 
-    "navbar navbar navbar"
-    "main main main"
-    "footer footer footer"
+    grid-template-areas:
+        "navbar navbar navbar"
+        "main main main"
+        "footer footer footer"
 }
 
-nav{
+#pokeimage {
+    width: 35px;
+    aspect-ratio: 1 / 1;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+nav {
     grid-area: navbar;
+    font-weight: bold;
+    
+    background-color: #386641;
+    color: #F2E8CF;
+    font-size: 1.75rem;
+    position: sticky;
+    top:0;
+    z-index: 10;
 }
 
-main{
+nav .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.625rem;
+    padding: 0.625rem;
+}
+
+main {
     grid-area: main;
+    margin: 10px;
 }
 
-
-footer{
+footer {
     grid-area: footer;
 }
-
-
-
-

@@ -1,6 +1,9 @@
+import pokeball from '../assets/pokeball.png'
+
 function Nav(){
     return (
-        <ul>
+        <ul className='nav-container'>
+            <li><img id ="pokeimage" src ={pokeball} alt="" /></li>
             <li>Pokemon</li>
         </ul>
     )
