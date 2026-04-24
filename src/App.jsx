@@ -7,6 +7,8 @@ function App() {
   const [pokemons, setPokemons] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -58,6 +60,7 @@ function App() {
         </div>
       </main>
 
+      {/* Es recomendado pasarlo a un componente */}
       <footer>
         <p>By Erick Mata Vera</p>
       </footer>

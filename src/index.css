@@ -31,12 +31,12 @@ ul {
 nav {
     grid-area: navbar;
     font-weight: bold;
-    
+
     background-color: #386641;
     color: #F2E8CF;
     font-size: 1.75rem;
     position: sticky;
-    top:0;
+    top: 0;
     z-index: 10;
 }
 
@@ -55,4 +55,43 @@ main {
 
 footer {
     grid-area: footer;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 0.675rem;
+    margin: 20px;
+}
+
+.card {
+    padding: 0.675rem;
+    border: 2px solid #BC4749;
+    border-radius: 10px;
+}
+
+.card-img {
+    display: flex;
+    justify-content: center;
+}
+
+.card-img img {
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+}
+
+.card-title {
+    display: flex;
+    justify-content: flex-start;
+    font-weight: 600;
+}
+
+.card-name {
+    display: flex;
+    font-weight: bolder;
+    justify-content: center;
 }

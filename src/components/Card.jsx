@@ -1,9 +1,15 @@
-function Card({ id ,name, img }) {
+function Card({ id, name, img }) {
   return (
     <div className="card">
-      {<p>{id}</p>}
-      {<p>{name}</p>}
-      <img src={img} alt={name} />
+      <div className="card-title">
+        <span>{id}</span>
+      </div>
+      <div className="card-img">
+        <img src={img}></img>
+      </div>
+      <div className="card-name">
+        <span>{name}</span>
+      </div>
     </div>
   );
 }
