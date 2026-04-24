@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getKantoPokemos } from "./services/pokemonService.js";
 import Card from "./components/Card.jsx";
+import Nav from "./components/Nav.jsx";
 
 function App() {
   const [pokemons, setPokemons] = useState([]);
@@ -17,6 +18,7 @@ function App() {
             const data = await pokeData.json();
 
             return {
+              id: data.id,
               name: data.name,
               image: data.sprites.front_default,
             };
@@ -38,11 +40,27 @@ function App() {
 
   return (
     <>
-      <div className="content">
-        {pokemons.map((value, index) => {
-          return <Card key={index} name={value.name} img={value.image} />;
-        })}
-      </div>
+      <nav>
+        <Nav />
+      </nav>
+      <main>
+        <div className="card-container">
+          {pokemons.map((pokemon, index) => {
+            return (
+              <Card
+                key={pokemon.id}
+                id={pokemon.id}
+                name={pokemon.name}
+                img={pokemon.image}
+              />
+            );
+          })}
+        </div>
+      </main>
+
+      <footer>
+        <p>By Erick Mata Vera</p>
+      </footer>
     </>
   );
 }

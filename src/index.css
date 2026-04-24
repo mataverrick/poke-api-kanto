@@ -1,4 +1,31 @@
 *{
-    background-color: #FFF8EC;
+    box-sizing: border-box;
+    background-color: #F2E8CF;
 }
+
+body{margin: 0;}
+
+#root{
+    display: grid;
+    grid-template-areas: 
+    "navbar navbar navbar"
+    "main main main"
+    "footer footer footer"
+}
+
+nav{
+    grid-area: navbar;
+}
+
+main{
+    grid-area: main;
+}
+
+
+footer{
+    grid-area: footer;
+}
+
+
+
 

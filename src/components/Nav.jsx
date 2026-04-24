@@ -1,8 +1,8 @@
 function Nav(){
     return (
-        <nav>
-            <span>Kanto Pokemon</span>
-        </nav>
+        <ul>
+            <li>Pokemon</li>
+        </ul>
     )
 }
 
