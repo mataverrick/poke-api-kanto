@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    font-size: 16px;
 }
 
 body {
@@ -38,6 +39,7 @@ nav {
     position: sticky;
     top: 0;
     z-index: 10;
+    font-size: 2rem;
 }
 
 nav .nav-container {
@@ -50,6 +52,9 @@ nav .nav-container {
 
 main {
     grid-area: main;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin: 10px;
 }
 
@@ -60,7 +65,13 @@ footer {
     align-items: baseline;
 }
 
+.actions{
+    align-self: center;
+}
+
 .card-container {
+    flex: 1;
+
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     gap: 0.675rem;
