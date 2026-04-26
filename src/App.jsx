@@ -17,7 +17,7 @@ function App() {
   const currentBlock = Math.floor((page - 1) / pagesPerView);
 
   const start = pagesPerView * currentBlock + 1;
-  const end = Math.min(start + pagesPerView - 1,totalPages);
+  const end = Math.min(start + pagesPerView - 1, totalPages);
 
   const pagination = Array.from(
     { length: end - start + 1 },
@@ -51,7 +51,7 @@ function App() {
     };
 
     fetchData();
-  }, [page]);
+  }, [offset]);
 
   if (loading) return <p>loading...</p>;
 
@@ -75,6 +75,31 @@ function App() {
         </div>
 
         <div className="actions">
+          
+          <button
+            onClick={() => {
+              const prevPage = start - 1;
+              setPage(prevPage);
+              setOffset((prevPage - 1) * limit);
+            }}
+            disabled={start === 1}
+          >
+            {"<<"}
+          </button>
+
+          
+          <button
+            onClick={() => {
+              const prev = page - 1;
+              setPage(prev);
+              setOffset((prev - 1) * limit);
+            }}
+            disabled={page === 1}
+          >
+            {"<"}
+          </button>
+
+          
           {pagination.map((p) => (
             <button
               key={p}
@@ -82,14 +107,40 @@ function App() {
                 setPage(p);
                 setOffset((p - 1) * limit);
               }}
+              style={{
+                fontWeight: page === p ? "bold" : "normal",
+              }}
             >
               {p}
             </button>
           ))}
+
+          
+          <button
+            onClick={() => {
+              const next = page + 1;
+              setPage(next);
+              setOffset((next - 1) * limit);
+            }}
+            disabled={page === totalPages}
+          >
+            {">"}
+          </button>
+
+         
+          <button
+            onClick={() => {
+              const nextBlockPage = end + 1;
+              setPage(nextBlockPage);
+              setOffset((nextBlockPage - 1) * limit);
+            }}
+            disabled={end === totalPages}
+          >
+            {">>"}
+          </button>
         </div>
       </main>
 
-      {/* Lo pasare a componente ignorarlo por el momento */}
       <footer>
         <p>By Erick Mata Vera</p>
       </footer>
